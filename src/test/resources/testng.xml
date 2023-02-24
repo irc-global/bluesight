@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Regression Suite">
+    <test name="Regression Test" enabled="true" preserve-order="true">
+        <groups>
+            <run>
+                <include name="web"/>
+                <include name="api"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.vaznoe.bluesight.tests.*"/>
+        </packages>
+        <listeners>
+            <listener class-name="io.qameta.allure.testng.AllureTestNg"></listener>
+        </listeners>
+    </test>
+</suite>
