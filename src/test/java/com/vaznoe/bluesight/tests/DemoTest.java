@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class WebTest extends BaseTest {
+public class DemoTest extends BaseTest {
 
     @BeforeClass(alwaysRun = true)
     public void setup(ITestContext testContext) throws Exception {
@@ -16,7 +16,7 @@ public class WebTest extends BaseTest {
         driver.manage().window().maximize();
     }
 
-    @Test(groups = "web")
+    @Test(groups = "regression")
     public void partialFormTest() {
         homePage.openPage()
                 .verifyHomePageOpened()
@@ -25,6 +25,17 @@ public class WebTest extends BaseTest {
                 .verifyRequestDemoWindowDisplayed()
                 .fillOutCompanyStateProduct();
 
+    }
+
+    @Test(groups = "regression")
+    public void costcheckSavingsTest() {
+        String result = costCheckSavingsPage.openPage()
+                .verifyCostCheckSavingsPageOpened()
+                .setHospitalSize()
+                .setRecommendedChangesPerMonth()
+                .setOverchargesCorrectedPerMonth()
+                .checkPotentialSavingsGeneratedPerMonth();
+        assertThat(result).isEqualToIgnoringCase("$40,000");
     }
 
     @AfterClass(alwaysRun = true)

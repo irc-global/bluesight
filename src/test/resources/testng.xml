@@ -3,8 +3,7 @@
     <test name="Regression Test" enabled="true" preserve-order="true">
         <groups>
             <run>
-                <include name="web"/>
-                <include name="api"/>
+                <include name="regression"/>
             </run>
         </groups>
         <packages>

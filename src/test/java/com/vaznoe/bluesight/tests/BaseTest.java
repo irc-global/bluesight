@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import com.vaznoe.bluesight.config.PageObjectConfig;
 import com.vaznoe.bluesight.config.TestConfig;
 import com.vaznoe.bluesight.config.properties.TestProperty;
+import com.vaznoe.bluesight.pages.CostCheckSavingsPage;
 import com.vaznoe.bluesight.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,4 +22,7 @@ public abstract class BaseTest extends AbstractTestNGSpringContextTests {
 
     @Autowired
     protected HomePage homePage;
+
+    @Autowired
+    protected CostCheckSavingsPage costCheckSavingsPage;
 }
